@@ -1,6 +1,6 @@
 (() => {
   const CONFIG = {
-    jsonUrl: './data/rice_price.json',
+    jsonUrl: 'https://happyrice180.github.io/RicePriceDispTest/data/rice_price.json',
 
     chartCanvasId: 'ricePriceChart',
     metaElementId: 'ricePriceMeta',
