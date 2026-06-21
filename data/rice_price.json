@@ -1,0 +1,30 @@
+{
+  "updated_at": "2026-06-21T11:40:50.053Z",
+  "target": "rice_price_monthly",
+  "label": "米価参考指標",
+  "unit": "円/5kg",
+  "source": "manual_input",
+  "data": [
+    {
+      "month": "2026-01",
+      "price": 4500,
+      "unit": "円/5kg",
+      "source": "手入力",
+      "memo": "テスト"
+    },
+    {
+      "month": "2026-02",
+      "price": 4620,
+      "unit": "円/5kg",
+      "source": "手入力",
+      "memo": "テスト"
+    },
+    {
+      "month": "2026-03",
+      "price": 4750,
+      "unit": "円/5kg",
+      "source": "手入力",
+      "memo": "テスト"
+    }
+  ]
+}
