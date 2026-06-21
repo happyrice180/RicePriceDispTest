@@ -2,23 +2,69 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>米価JSON確認</title>
-</head>
-<body>
-  <h1>米価JSON確認</h1>
-  <pre id="output">loading...</pre>
+  <title>米価参考指標</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <script>
-    fetch("./data/rice_price.json")
-      .then(response => response.json())
-      .then(json => {
-        document.getElementById("output").textContent =
-          JSON.stringify(json, null, 2);
-      })
-      .catch(error => {
-        document.getElementById("output").textContent =
-          "読み込み失敗: " + error;
-      });
-  </script>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      padding: 24px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .chart-card {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .chart-title {
+      margin: 0 0 4px;
+      font-size: 1.35rem;
+    }
+
+    .chart-note {
+      margin: 0 0 16px;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .chart-wrap {
+      position: relative;
+      width: 100%;
+      height: 360px;
+    }
+
+    .chart-meta {
+      margin-top: 16px;
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    .chart-error {
+      color: #b00020;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="chart-card">
+    <h1 class="chart-title">米価参考指標</h1>
+    <p class="chart-note">
+      テスト用月次価格データを表示しています。
+    </p>
+
+    <div class="chart-wrap">
+      <canvas id="ricePriceChart"></canvas>
+    </div>
+
+    <div id="ricePriceMeta" class="chart-meta">読み込み中...</div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./assets/rice_price_chart.js"></script>
 </body>
 </html>
